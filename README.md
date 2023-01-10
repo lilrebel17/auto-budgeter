@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Auto Budgeter
 This application takes your paycheck, bills and sets you a budget either based on %'s you decide on or automatic percentages.
 
@@ -52,3 +53,7 @@ Please note, if you do not build the React first, you will get an error on the e
             ```
             npm run dist
             ```
+=======
+# auto-budgeter
+Automatically Budgets your check based on % you set!
+>>>>>>> main
