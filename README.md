@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Auto Budgeter
 This application takes your paycheck, bills and sets you a budget either based on %'s you decide on or automatic percentages.
 
