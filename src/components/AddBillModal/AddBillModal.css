@@ -1,0 +1,20 @@
+#billModalContainer {
+  position:fixed;
+  background-color: rgb(0,0,0,.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#billModal {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  text-align: center;
+  margin-top: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
