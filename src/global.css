@@ -1,7 +1,9 @@
 body {
   margin: 0;
 }
-
+textarea {
+  resize: none;
+}
 .hidden {
   height: 0;
   overflow: hidden;

@@ -4,7 +4,7 @@ import React from "react";
 export default class Version extends React.Component {
     render() {
         const tag = 'ALPHA'
-        const version = '0.1.0'
+        const version = '0.1.1'
         return(
             <p>V. {tag}-{version}</p>
         )

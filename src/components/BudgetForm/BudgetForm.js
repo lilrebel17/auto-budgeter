@@ -1,6 +1,6 @@
 import React from "react";
 import NumberInput from "../NumberInput/NumberInput.js";
-import AddBillModal from "../AddBillModal/AddBillModal.js";
+import  AddBillModal from "../AddBillModal/AddBillModal.js";
 import formValues from './BudgetFormValues.js'
 import './BudgetForm.css'
 
@@ -9,13 +9,7 @@ export default function BudgetForm(props) {
    const updateValues = (e) => {
         const paycheckInput = document.getElementById('paycheckInput')
         formValues.paycheckAmount = paycheckInput.value
-    }
-    const showBillForm = (e) => {
-        const addBillModal = document.getElementById('billModal');
-        addBillModal.className = 'shown'
-    }
-    const addNewBill = (e) => {
-
+        console.log(formValues)
     }
     return(
         <div id='budgetForm'>
@@ -28,7 +22,7 @@ export default function BudgetForm(props) {
             />
             <input type="Submit" />
         </form>
-        <AddBillModal storage={formValues.bills}/>
+        <AddBillModal storageArray={formValues.bills} />
         </div>
     )
 }

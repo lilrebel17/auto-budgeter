@@ -13,6 +13,7 @@ function createWindow() {
     // Set the path of an additional "preload" script that can be used to
     // communicate between node-land and browser-land.
     webPreferences: {
+      enableRemoteModule: true,
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: false,
       nodeIntegration: true
