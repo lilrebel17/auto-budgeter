@@ -68,10 +68,10 @@ export default function AddBillModal(props) {
             <div id='billModalContainer' className="hidden">
                 <form id='billModal'>
                 <h1>Add New Bill</h1>
-                <p id='billModalAlert'></p>
+                <p id={'billModalAlert'}></p>
                 <button type={'button'} onClick={hideModal}>X</button>
-                <textarea id='billName' value={name} placeholder={'Name'}onChange={updateName}></textarea>
-                <input type={'number'} min={0} id={'billAmount'} value={amount} placeholder={'Amount'} onChange={updateAmount}></input>
+                <textarea id={'billName'} value={name} placeholder={'Name'} onChange={updateName}></textarea>
+                <input type={'number'} min={0} step={0.01} id={'billAmount'} value={amount} placeholder={'Amount'} onChange={updateAmount}></input>
                 <input id={'billModalSubmit'}type={'submit'} onClick={validateForm}></input>
                 </form>
             </div>

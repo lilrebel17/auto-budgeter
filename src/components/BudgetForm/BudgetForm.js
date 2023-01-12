@@ -15,16 +15,20 @@ export default function BudgetForm(props) {
             <h4>{name}</h4>
             <p>${amount}</p>
         </div>
-
+ 
+        //We store the newArray as a copy of the old array & the element variable above, if not it overwrites the same text
         const newArray = [...billRenderArray,element]
+
         pushToArray(newArray)
     }
 
+    //Stores the bill in formValues so we can access it later.
     const storeBill = (name,amount) => {
-        formValues.bills = {name: name, amount: amount}
+        formValues.bills.push({name: name, amount: amount})
         console.log("Form Values: ", formValues)
     }
 
+    // Stores the paycheck in formValues to be used later.
    const updateValues = (e) => {
         const paycheckInput = document.getElementById('paycheckInput')
         formValues.paycheckAmount = paycheckInput.value

@@ -1,4 +1,4 @@
-# Auto Budgeter
+# Auto Budgeter V.ALPHA-0.1.2
 This application takes your paycheck, bills and sets you a budget either based on %'s you decide on or automatic percentages.
 
 # Docs
