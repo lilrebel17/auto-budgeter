@@ -29,13 +29,27 @@ export default function AddBillModal(props) {
         document.getElementById('billModalContainer').classList.replace('hidden','shown')
     }
 
+    function validateForm() {
+        const alert = document.getElementById('billModalAlert')
+        if(name == "" || amount == "") {
+            alert.innerHTML = 'One of more fields are missing'
+            setTimeout(() => {alert.innerHTML = ""},4000)
+            return
+        }
+        if(name.match(/^\s*$/)) {
+            alert.innerHTML = 'Name field is invalid'
+            setTimeout(() => {alert.innerHTML = ""},4000)
+            return
+        }
+        else {updateStorage()}
+    }
     //Allows the component to update a storage array so it can talk to other components. then hides & resets the modals values
     function updateStorage(e) {
-        const bill = {'name':name,'amount':amount}
-        props.storageArray.push(bill)
-        console.log(`New Entry to storageArray: \nName: ${name}\nAmount: ${amount}`)
-        hideModal()
-        resetAllStates()
+            const bill = {'name':name,'amount':amount}
+            props.storageArray.push(bill)
+            console.log(`New Entry to storageArray: \nName: ${name}\nAmount: ${amount}`)
+            hideModal()
+            resetAllStates()
     }
 
     //Sets our modals editable values to the default state
@@ -50,10 +64,11 @@ export default function AddBillModal(props) {
             <div id='billModalContainer' className="hidden">
                 <form id='billModal'>
                 <h1>Add New Bill</h1>
+                <p id='billModalAlert'></p>
                 <button type={'button'} onClick={hideModal}>X</button>
                 <textarea id='billName' value={name} placeholder={'Name'}onChange={updateName}></textarea>
                 <input type={'number'} min={0} id={'billAmount'} value={amount} placeholder={'Amount'} onChange={updateAmount}></input>
-                <input id={'billModalSubmit'}type={'submit'} onClick={updateStorage}></input>
+                <input id={'billModalSubmit'}type={'submit'} onClick={validateForm}></input>
                 </form>
             </div>
         </div>

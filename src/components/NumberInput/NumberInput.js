@@ -3,7 +3,7 @@ import './NumberInput.css'
 
 export default function NumberInput(props) {
 
-    const [value,newValue] = useState()
+    const [value = "",newValue] = useState()
 
     function updateValue(event) {
         newValue(event.target.value)
@@ -19,6 +19,7 @@ export default function NumberInput(props) {
                     name={props.inputName} 
                     htmlFor={props.formName}
                     id={props.inputID}
+                    value={value}
                     step={0.01}
                     min={0}
                     onChange={updateValue}
