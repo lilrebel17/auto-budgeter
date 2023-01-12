@@ -29,9 +29,10 @@ export default function AddBillModal(props) {
         document.getElementById('billModalContainer').classList.replace('hidden','shown')
     }
 
+    //Checks for empty & whitespace inputs so we dont get empty names or amounts
     function validateForm() {
         const alert = document.getElementById('billModalAlert')
-        if(name == "" || amount == "") {
+        if(name === "" || amount === "") {
             alert.innerHTML = 'One of more fields are missing'
             setTimeout(() => {alert.innerHTML = ""},4000)
             return
@@ -41,15 +42,18 @@ export default function AddBillModal(props) {
             setTimeout(() => {alert.innerHTML = ""},4000)
             return
         }
-        else {updateStorage()}
-    }
-    //Allows the component to update a storage array so it can talk to other components. then hides & resets the modals values
-    function updateStorage(e) {
-            const bill = {'name':name,'amount':amount}
-            props.storageArray.push(bill)
-            console.log(`New Entry to storageArray: \nName: ${name}\nAmount: ${amount}`)
-            hideModal()
+        //If it passes, we check for Render & Storage functions for all the info from the form.
+        else {
+            if(props.parentRenderFunction != null) {
+                props.parentRenderFunction(name,amount)
+            }
+            if(props.parentStorageFunction != null) {
+                props.parentStorageFunction(name,amount)
+            }
+            //Finally we reset the form & hide the modal
             resetAllStates()
+            hideModal()
+        }
     }
 
     //Sets our modals editable values to the default state

@@ -2,10 +2,10 @@
   "name": "auto-budgeter",
   "author": "Zack Farmer",
   "description": "An automatic budgeting app based on %",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "homepage": "./",
-  "main": "./public/Electron/electron.js",
+  "main": "./public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
